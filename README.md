@@ -3,7 +3,7 @@ Welcome to the ECSD Tech Test
 
 
 ## Running  E2E Test:
-Framework is built using Java, maven,testng, selenium, Grid, docker container. Currently it executes as TestNg test however it can extended to have cucumber wrapper on top it. Exceuted results can be seens in console & reports 
+Framework is built using Java,Pageobjects model, maven,testng, selenium, Grid, docker container. Currently it executes as TestNg test however it can extended to have cucumber wrapper on top it. Exceuted results can be seens in console & reports 
 
 
 ### if ecsd-tech-test docker image is not  present
