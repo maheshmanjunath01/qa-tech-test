@@ -14,7 +14,7 @@ and follow the steps as mentioned below
 
 ### if  ecsd-tech-test docker image is   present
 
-Run in terminal below commands at applocication root directory:
+Run in terminal below commands at application root directory:
 
 `docker compose up -d` 
 
