@@ -1,6 +1,34 @@
 # ECSD Tech Test
 Welcome to the ECSD Tech Test 
 
+
+## Running  E2E Test:
+Framework is built using Java, maven,testng, selenium, Grid, docker container. Currently it executes as TestNg test however it can extended to have cucumber wrapper on top it. Exceuted results can be seens in console & reports 
+
+
+### ecsd-tech-test image is not  present
+
+Run: `docker build -t ecsd-tech-test .`
+and follow the steps as mentioned below
+
+
+### ecsd-tech-test image is not  present
+
+Run in terminal below commands at applocication root directory:
+
+`docker compose up -d` 
+
+`docker ps -a`
+
+`mvn test -Dbrowser=firefox -Dtype=remote`  (runs test in docker)
+
+                or
+`mvn test -Dbrowser=chrome -Dtype=local`   (runs test in local machine)
+
+
+Note: Docker compose creates app, hub , selenium chrome , selenium firefox
+
+
 Please make a clone of this repository
 
 ## Running the application
@@ -48,6 +76,9 @@ Once completed push the solution up to your own repository and link ECS the url 
 Please stick to contributing from one account, it makes you look better.
 
 Good Luck!
+
+## Running Tests:
+
 
 [docker]: https://docs.docker.com/get-started/
 [node]: https://nodejs.org/en/

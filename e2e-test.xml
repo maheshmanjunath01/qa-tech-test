@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="order-module" parallel="none" allow-return-values="true" >
+    <test name="e2e-test">
+        <classes>
+            <class name="DockerTest"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->

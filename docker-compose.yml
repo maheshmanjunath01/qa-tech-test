@@ -1,0 +1,54 @@
+version: "3"
+services:
+  app:
+    image: ecsd-tech-test:latest
+    ports:
+      - "3000:3000"
+  hub:
+    image: selenium/hub:3.141.59
+    ports:
+      - "4444:4444"
+    depends_on:
+      - app
+    environment:
+      GRID_MAX_SESSION: 16
+      GRID_BROWSER_TIMEOUT: 3000
+      GRID_TIMEOUT: 3000
+    links:
+      - app
+
+  chrome:
+    image: selenium/node-chrome:3.141.59
+    container_name: web-automation_chrome
+    ports:
+      - "9001:5000"
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+      NODE_MAX_SESSION: 2
+      NODE_MAX_INSTANCES: 2
+    volumes:
+      - /dev/shm:/dev/shm
+    links:
+      - hub
+      - app
+
+  firefox:
+    image: selenium/node-firefox:3.141.59
+    container_name: web-automation_firefox
+    ports:
+      - "9002:5000"
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+      NODE_MAX_SESSION: 2
+      NODE_MAX_INSTANCES: 2
+    volumes:
+      - /dev/shm:/dev/shm
+    links:
+      - hub
+      - app
