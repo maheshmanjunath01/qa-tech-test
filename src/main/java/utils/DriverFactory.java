@@ -23,7 +23,6 @@ public class DriverFactory {
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-
         driver = DriverFactory.build(System.getProperty("browser"));
     }
 

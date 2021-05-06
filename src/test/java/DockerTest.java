@@ -11,18 +11,16 @@ import utils.DriverFactory;
 import utils.GenericFunctions;
 
 public class DockerTest extends DriverFactory {
-  //  GenericFunctions genericFunctions = PageFactory.initElements(driver, GenericFunctions.class);
-    HomePageObjects homePage = PageFactory.initElements( driver, HomePageObjects.class);
+    //  GenericFunctions genericFunctions = PageFactory.initElements(driver, GenericFunctions.class);
+    HomePageObjects homePage = PageFactory.initElements(driver, HomePageObjects.class);
     private static final Logger log = LogManager.getLogger(DockerTest.class.getName());
-
 
     @Test
     public void dockerTest() {
         try {
-
-                driver.get(DriverFactory.url);
-                homePage.clickChallengeButton();
-                homePage.solveChallengeAndSubmitAnswer();
+            driver.get(DriverFactory.url);
+            homePage.clickChallengeButton();
+            homePage.solveChallengeAndSubmitAnswer();
         } catch (NoSuchElementException e) {
             System.out.println("Could not load the page");
             e.printStackTrace();
